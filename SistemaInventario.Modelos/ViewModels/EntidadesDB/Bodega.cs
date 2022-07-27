@@ -27,11 +27,9 @@ namespace SistemaInventario.Modelos.ViewModels.EntidadesDB
         [Required]
         [Column("DESCRIPCION_B")]
         [StringLength(1000)]
-        public string DescripcionB { get; set; }
-        [Required]
+        public string DescripcionB { get; set; }        
         [Column("ESTADO")]
-        [StringLength(50)]
-        public string Estado { get; set; }
+        public int Estado { get; set; }
 
         [InverseProperty("FidProdNavigation")]
         public virtual ICollection<BodegaProd> BodegaProd { get; set; }
