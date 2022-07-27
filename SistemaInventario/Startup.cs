@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SistemaInventarioAccesoDatos.Repositorio;
+using SistemaInventarioAccesoDatos.Repositorio.IRepositorio;
 //using SistemaInventario.Data;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,7 @@ namespace SistemaInventario
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<DbContext>();
+            services.AddScoped<IUnidadTrabajo, UnidadTrabajo > ();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

@@ -45,6 +45,8 @@ namespace SistemaInventarioAccesoDatos.Data
 
                 entity.Property(e => e.DescripcionB).IsUnicode(false);
 
+                entity.Property(e => e.Estado).IsUnicode(false);
+
                 entity.Property(e => e.NombreB).IsUnicode(false);
             });
 

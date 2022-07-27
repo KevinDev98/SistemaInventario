@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace SistemaInventario.Modelos.ViewModels.EntidadesDB
 {
     [Table("BODEGA")]
-    public partial class Bodega
+    public class Bodega
     {
         public Bodega()
         {
@@ -28,6 +28,10 @@ namespace SistemaInventario.Modelos.ViewModels.EntidadesDB
         [Column("DESCRIPCION_B")]
         [StringLength(1000)]
         public string DescripcionB { get; set; }
+        [Required]
+        [Column("ESTADO")]
+        [StringLength(50)]
+        public string Estado { get; set; }
 
         [InverseProperty("FidProdNavigation")]
         public virtual ICollection<BodegaProd> BodegaProd { get; set; }
